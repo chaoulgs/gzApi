@@ -34,8 +34,8 @@ app.use(bodyParser.json());
 
 //Routes
 app.use('/api', require('./routes/api'));
-app.use('/index', require('./routes/index');
-app.use('/users', require('./routes/users');
+app.use('/index', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 //view engine
 app.set('views', path.join(__dirname, 'views'));
