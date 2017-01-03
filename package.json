@@ -6,12 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Gabriel Chaoul",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "*",
     "body-parser": "^1.15.2",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "cors": "^2.8.1",
     "express": "^4.14.0",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
     "mongoose": "^4.7.4",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
     "node-restful": "^0.2.5"
   }
 }
