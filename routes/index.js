@@ -5,7 +5,7 @@ var router = express.Router();
 //Routes
 
 //homepage
-router.get('/', ensureAuthenticated, function(req, res){
+router.get('/', function(req, res){
 	res.render('index');
 });
 
