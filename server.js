@@ -29,36 +29,11 @@ app.all('/', function(req, res, next) {
   next();
 });
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-//Routes
-app.use('/api', require('./routes/api'));
-app.use('/index', require('./routes/index'));
-app.use('/users', require('./routes/users'));
-
-//view engine
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout:'layout'}));
-app.set('view engine', 'handlebars');
-
 //bodyParser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
-
-//set static folder
-app.use(express.static(path.join(__dirname, 'public')));
-
-//express session
-app.use(session({
-	secret: 'secret',
-	saveUninitialized: true,
-	resave: true
-}));
-
 //express validator
-
 app.use(expressValidator({
 	errorFormatter: function(param, msg, value) {
 		var namespace = param.split('.')
@@ -73,6 +48,29 @@ app.use(expressValidator({
 			value : value
 		};
 	}
+}));
+
+//Routes
+app.use('/api', require('./routes/api'));
+app.use('/index', require('./routes/index'));
+app.use('/users', require('./routes/users'));
+
+//view engine
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', exphbs({defaultLayout:'layout'}));
+app.set('view engine', 'handlebars');
+
+
+
+
+//set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+//express session
+app.use(session({
+	secret: 'secret',
+	saveUninitialized: true,
+	resave: true
 }));
 
 //connect flash
