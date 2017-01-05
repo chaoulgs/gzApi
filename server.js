@@ -50,19 +50,6 @@ app.use(expressValidator({
 	}
 }));
 
-//Routes
-app.use('/api', require('./routes/api'));
-app.use('/index', require('./routes/index'));
-app.use('/users', require('./routes/users'));
-
-//view engine
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout:'layout'}));
-app.set('view engine', 'handlebars');
-
-
-
-
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -83,6 +70,16 @@ app.use(function(req, res, next){
 	res.locals.error = req.flash('error');
 	next();
 });
+
+//Routes
+app.use('/api', require('./routes/api'));
+app.use('/index', require('./routes/index'));
+app.use('/users', require('./routes/users'));
+
+//view engine
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', exphbs({defaultLayout:'layout'}));
+app.set('view engine', 'handlebars');
 
 //Start server
 app.listen(3000);
