@@ -16,7 +16,7 @@ var userSchema = new mongoose.Schema({
 	},
 	toxicTokens: {
 		type: Number
-	}
+	},
 	username: {
 		type: String,
 		index: true
