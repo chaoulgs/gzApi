@@ -45,7 +45,10 @@ router.post('/register', function(req, res){
 			name: name,
 			email: email,
 			username: username,
-			password: password
+			password: password,
+			discordId: "unassigned",
+			tokens: 0,
+			toxicTokens: 0
 		});
 
 		User.createUser(newUser, function(err, user){
@@ -78,11 +81,11 @@ passport.use(new LocalStrategy(
 ));
 
 passport.serializeUser(function(user, done){
-	done(null, user._id.toString());
+	done(null, user._id);
 });
 
 passport.deserializeUser(function(id, done){
-	User.getUserById(id, function(err, user){
+	User.findById(id, function(err, user){
 		done(err, user);
 	});
 });
