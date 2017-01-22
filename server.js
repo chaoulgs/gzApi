@@ -23,7 +23,7 @@ var connOptions = {
 
 //MongoDB
 //var connString = 'mongodb://' + gzApiSecrets.mongoUser + ':' + gzApiSecrets.mongoPass + '@localhost/gzbot';
-console.log(connString);
+//console.log(connString);
 
 //mongoose.connect(connString);
 mongoose.connect('mongodb://localhost/gzbot', connOptions);
