@@ -21,13 +21,15 @@ router.get('/login', function(req, res){
 //register User
 router.post('/register', function(req, res){
 	var name = req.body.name;
-	var email = req.body.email;
+	var discordId = req.body.discordId;
+	var email = req.body.email;	
 	var username = req.body.username;
 	var password = req.body.password;
 	var password2 = req.body.password2;
 
 	//validation
 	req.checkBody('name', 'Name is required').notEmpty();
+	req.checkBody('discordId', 'Discord ID is required').notEmpty();
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('email', 'Email is not valid').isEmail();
 	req.checkBody('username', 'Username is required').notEmpty();
