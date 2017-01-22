@@ -92,7 +92,7 @@ app.set('view engine', 'handlebars');
 //Start server
 var port = process.env.PORT || 3000;
 
-server.listen(port, function(){
+app.listen(port, function(){
 	console.log('API is running on port 3000');
 });
 
