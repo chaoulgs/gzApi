@@ -13,8 +13,11 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var cors = require('cors');
 
+//secrets file
+var gzApiSecrets = require('./gzApiSecrets.js');
+
 //MongoDB
-mongoose.connect('mongodb://localhost/gzbot');
+mongoose.connect('mongodb://' + gzApiSecrets.mongoUser + ':' + gzApiSecrets.mongoPass + 'localhost/gzbot');
 var db = mongoose.connection;
 
 //Express - initialize
