@@ -17,7 +17,7 @@ var cors = require('cors');
 var gzApiSecrets = require('./gzApiSecrets.js');
 
 //MongoDB
-mongoose.connect('mongodb://' + gzApiSecrets.mongoUser + ':' + gzApiSecrets.mongoPass + 'localhost/gzbot');
+mongoose.connect('mongodb://' + gzApiSecrets.mongoUser + ':' + gzApiSecrets.mongoPass + '@localhost/gzbot');
 var db = mongoose.connection;
 
 //Express - initialize
