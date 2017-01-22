@@ -48,7 +48,7 @@ router.post('/register', function(req, res){
 			email: email,
 			username: username,
 			password: password,
-			discordId: "unassigned",
+			discordId: discordId,
 			tokens: 0,
 			toxicTokens: 0
 		});
