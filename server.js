@@ -90,5 +90,11 @@ app.engine('handlebars', exphbs({defaultLayout:'layout'}));
 app.set('view engine', 'handlebars');
 
 //Start server
-app.listen(3000);
-console.log('API is running on port 3000');
+var port = process.env.PORT || 3000;
+
+server.listen(port, function(){
+	console.log('API is running on port 3000');
+});
+
+//app.listen(3000);
+//console.log('API is running on port 3000');
